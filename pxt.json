@@ -1,0 +1,35 @@
+{
+    "name": "Conleys game V2.2.10",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "animation": "*",
+        "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.24",
+        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
+        "edge-connector": "*",
+        "Inventory": "github:UnsignedArduino/Inventory#v1.1.0"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "branch": "v1.6.24",
+        "tag": "v1.6.24",
+        "commits": "https://github.com/microsoft/pxt-arcade/commits/5bea1575ea693e0648a647cbd86cda9776d58f48",
+        "target": "1.6.24",
+        "pxt": "7.2.25",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj",
+    "languageRestriction": "javascript-only"
+}
