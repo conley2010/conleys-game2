@@ -7,7 +7,10 @@
         "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.24",
         "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
         "edge-connector": "*",
-        "Inventory": "github:UnsignedArduino/Inventory#v1.1.0"
+        "Inventory": "github:UnsignedArduino/Inventory#v1.1.0",
+        "arcade-block-objects": "github:microsoft/arcade-block-objects#f486ac1d4dcc096b9297174f97f8cdef1576c7ff",
+        "pxt-lantern": "github:felixtsu/pxt-lantern#v0.2.0",
+        "password-save": "github:jacobcarpenter/pxt-password-save#a5d4c0766d1fa5f46428caa6885cccce703dc495"
     },
     "files": [
         "main.ts",
