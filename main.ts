@@ -121,7 +121,14 @@ if (level ==0 ){
     game.splash(yousuck)
 
     game.reset()
+    
 }
+    if (level == 3) {
+        powerjump = 2
+        game.splash(yousuck)
+
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    }
 })
 scene.onOverlapTile(SpriteKind.attack, img`
     5 4 4 5 5 4 4 4 4 2 2 2 4 4 4 4
@@ -151,6 +158,12 @@ scene.onOverlapTile(SpriteKind.attack, img`
         game.splash(yousuck)
 
         game.reset()
+    }
+    if (level == 3){
+        powerjump = 2
+        game.splash(yousuck)
+
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
     }
 })
 
@@ -765,11 +778,18 @@ scene.onOverlapTile(SpriteKind.Player, img`
 `, function(sprite: Sprite, location: tiles.Location) {
 
 level += 1
-    tiles.setTilemap(tilemap`level4`)
+  if (level == 1){
+      tiles.setTilemap(tilemap`level4`)
 
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
 
+  }  
+if (level == 2) {
+    tiles.setTilemap(tilemap`level3`)
 
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+
+}
         myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
         mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
 
