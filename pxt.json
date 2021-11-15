@@ -1,5 +1,5 @@
 {
-    "name": "Conleys game V2.2.10",
+    "name": "Conleys game V2.2.10 - Copy",
     "description": "",
     "dependencies": {
         "device": "*",
@@ -10,7 +10,10 @@
         "Inventory": "github:UnsignedArduino/Inventory#v1.1.0",
         "arcade-block-objects": "github:microsoft/arcade-block-objects#f486ac1d4dcc096b9297174f97f8cdef1576c7ff",
         "pxt-lantern": "github:felixtsu/pxt-lantern#v0.2.0",
-        "password-save": "github:jacobcarpenter/pxt-password-save#a5d4c0766d1fa5f46428caa6885cccce703dc495"
+        "password-save": "github:jacobcarpenter/pxt-password-save#a5d4c0766d1fa5f46428caa6885cccce703dc495",
+        "pxt-scaling": "github:jwunderl/pxt-scaling#v0.1.0",
+        "pxt-sight": "github:felixtsu/pxt-sight#v0.0.3",
+        "controller": "*"
     },
     "files": [
         "main.ts",

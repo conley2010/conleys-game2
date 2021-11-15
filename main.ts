@@ -7,6 +7,7 @@ tiles.setTilemap(tilemap`level2`)
 
 
 }
+let saveFormat = pwsave.create()
 
 let mapSprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -151,6 +152,12 @@ scene.onOverlapTile(SpriteKind.attack, img`
 
         game.reset()
     }
+if (level == 3){
+game.splash(yousuck)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
+}
+
+
 })
 
 
@@ -764,10 +771,15 @@ scene.onOverlapTile(SpriteKind.Player, img`
 `, function(sprite: Sprite, location: tiles.Location) {
 
 level += 1
+   if (level == 1){
     tiles.setTilemap(tilemap`level4`)
 
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
+   }
+   if (level == 2){
+       tiles.setTilemap(tilemap`level3`)
 
+   }
 
         myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
         mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
@@ -776,7 +788,7 @@ level += 1
 
         mapSprite.setPosition(60, 10)
     mapSprite.setFlag(SpriteFlag.Invisible, true)
-
+   
 })
 sprites.onDestroyed(SpriteKind.Player, function(mysprite: Sprite) {
     if (level == 1){
@@ -1039,3 +1051,79 @@ game.onUpdateInterval(100, function() {
 
 
   mapSprite.setPosition(60, 10)   
+  
+  let cheese = Inventory.create_item(" cheese", img`
+      .............beebbbb............
+      ............eebbbb4bb...........
+      ............eb344bb4bb..........
+      ............e44334bb4bb.........
+      ............eb433344b4be........
+      ............4eb43344444be.......
+      ...........bd4eb43333344bb......
+      ..........b455d4443333444bb.....
+      ..........4d5555d444333444bb....
+      .........4555555dd4b4443444be...
+      ........bd5555d555d4bb444444ee..
+      ........b55ddd665555bb4b44444ee.
+      .......bd5555677655554ebb44444eb
+      .......43222558855555d4eeb44b4ee
+      ......b422332ddd555222d4eebbb4be
+      ......be22232ed55522332db4ebbbbe
+      .....bde22222e555e22232edd4bbbbe
+      .....b52e222e3555e22222eddd4ebee
+      ....bd552eee355552e222e355544eee
+      ....665dd5555555552eee355dd4deee
+      ...6776555555555555555551554d4ee
+      ...4885222555dddd6655551544d4eee
+      ..b45522332555dd677611d444ddeee.
+      ..4d5222232e55555881d44ddd4eee..
+      .bdd5e22222e555115114d54d4ee....
+      .b55d2e222e351144d1d55eeee......
+      bd5ddd2eee3d444555dd4e..........
+      b555115dddd55d544eede...........
+      4511d444d5544ee...4de...........
+      41d4555d4ee........44...........
+      41554eede.......................
+      44ee...4e.......................
+  `)
+
+
+
+scaling.scale2x(img`
+    . . . . . . f f f f . . . . . .
+    . . . . f f f 2 2 f f f . . . .
+    . . . f f f 2 2 2 2 f f f . . .
+    . . f f f e e e e e e f f f . .
+    . . f f e 2 2 2 2 2 2 e e f . .
+    . . f e 2 f f f f f f 2 e f . .
+    . . f f f f e e e e f f f f . .
+    . f f e f b f 4 4 f b f e f f .
+    . f e e 4 1 f d d f 1 4 e e f .
+    . . f e e d d d d d d e e f . .
+    . . . f e e 4 4 4 4 e e f . . .
+    . . e 4 f 2 2 2 2 2 2 f 4 e . .
+    . . 4 d f 2 2 2 2 2 2 f d 4 . .
+    . . 4 4 f 4 4 5 5 4 4 f 4 4 . .
+    . . . . . f f f f f f . . . . .
+    . . . . . f f . . f f . . . . .
+`)
+mySprite.setImage(img`
+    . . . . . . f f f f . . . . . .
+    . . . . f f f 2 2 f f f . . . .
+    . . . f f f 2 2 2 2 f f f . . .
+    . . f f f e e e e e e f f f . .
+    . . f f e 2 2 2 2 2 2 e e f . .
+    . . f e 2 f f f f f f 2 e f . .
+    . . f f f f e e e e f f f f . .
+    . f f e f b f 4 4 f b f e f f .
+    . f e e 4 1 f d d f 1 4 e e f .
+    . . f e e d d d d d d e e f . .
+    . . . f e e 4 4 4 4 e e f . . .
+    . . e 4 f 2 2 2 2 2 2 f 4 e . .
+    . . 4 d f 2 2 2 2 2 2 f d 4 . .
+    . . 4 4 f 4 4 5 5 4 4 f 4 4 . .
+    . . . . . f f f f f f . . . . .
+    . . . . . f f . . f f . . . . .
+`)
+multilights.toggleLighting(false)
+
