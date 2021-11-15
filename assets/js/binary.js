@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.6.24/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"1.1.0","target":"arcade","targetVersion":"1.6.24","repo":"conley2010/conleys-game2"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.6.24/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"1.0.1","target":"arcade","targetVersion":"1.6.24","repo":"conley2010/conleys-game2"}
 // total=1767631 new=14.23% cached=80.74% other=5.03%
 (function (ectx) {
 'use strict';
@@ -491,7 +491,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P62514(s) {
+function _main___P62567(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1548,13 +1548,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P62514.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/Inventory/main.ts","functionName":"<main>","argumentNames":[]}
-_main___P62514.continuations = [  ]
+_main___P62567.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/Inventory/main.ts","functionName":"<main>","argumentNames":[]}
+_main___P62567.continuations = [  ]
 
-function _main___P62514_mk(s) {
+function _main___P62567_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P62514, depth: s.depth + 1,
+        parent: s, fn: _main___P62567, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -56175,5 +56175,5 @@ const sprites_BaseSpriteSayRenderer__C24289_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["transparency16___62295","tile1___62298","tile2___62301","attack___61574","powerup___61577","mapSprite___61580","saveFormat___61583","mapSprite___61587","startscreen___61592","subtitle___61593","controls___61597","Controls___61598","admin___61603","number_of_jumps___61610","mySprite2___61618","attack___61615","mySprite___61625","level___61606","jump___61639","powerjump___61607","yousuck___61599","jumpcount___61609","direction___61608","myMinimap___61882","mySprite3___61955","admin2___61963","admintext___61952"])
 
-return _main___P62514
+return _main___P62567
 })
