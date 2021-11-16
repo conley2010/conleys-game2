@@ -120,8 +120,8 @@ powerjump=2
 if (level ==0 ){
     game.splash(yousuck)
 
-    game.reset()
-    
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+
 }
     if (level == 3) {
         powerjump = 2
@@ -157,7 +157,7 @@ scene.onOverlapTile(SpriteKind.attack, img`
     if (level == 0) {
         game.splash(yousuck)
 
-        game.reset()
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
     }
     if (level == 3){
         powerjump = 2
@@ -756,7 +756,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         true
     )
    
-
+level=0
 
 scene.onOverlapTile(SpriteKind.Player, img`
     . . . . . . . . . . . . . . d d
@@ -776,11 +776,11 @@ scene.onOverlapTile(SpriteKind.Player, img`
     . . . . . . . . . . . . . . d d
     . . . . . . . . . . . . . . d d
 `, function(sprite: Sprite, location: tiles.Location) {
-
 level += 1
-  if (level == 1){
+pause(200)
+if (level == 1){
       tiles.setTilemap(tilemap`level4`)
-
+  
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
 
   }  
@@ -790,7 +790,7 @@ if (level == 2) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
 
 }
-        myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
+        myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 0)
         mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
 
         mapSprite.setImage(myMinimap.image)
@@ -958,7 +958,7 @@ let admin2:number
 admin2=1
 forever(function() {
     controller.combos.attachCombo("u,d,a+b,a+b", function () {
-pwsave.promptForPassword(saveFormat)
+
 if (admin == 1) {
 admin2=1
 }   
@@ -1030,13 +1030,13 @@ let myMinimap = minimap.minimap()
 
 
 
-myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
+myMinimap = minimap.minimap(MinimapScale.Sixteenth, 0, 0)
 mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
 
 mapSprite.setImage(myMinimap.image)
 mapSprite.setFlag(SpriteFlag.Invisible, true)
 
-mapSprite.setPosition(60, 10)
+mapSprite.setPosition(60, 50)
 controller.down.onEvent(ControllerButtonEvent.Pressed, function() {
     mapSprite.setFlag(SpriteFlag.Invisible, false)
    
@@ -1049,7 +1049,7 @@ controller.down.onEvent(ControllerButtonEvent.Released, function () {
 
 
 game.onUpdateInterval(100, function() {
-    myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 6)
+    myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 8)
      minimap.includeSprite(myMinimap, mySprite, MinimapSpriteScale.Quadruple)
 
     mapSprite.setImage(myMinimap.image)
@@ -1060,7 +1060,8 @@ game.onUpdateInterval(100, function() {
     mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
 
 
-  mapSprite.setPosition(60, 10)   
+  mapSprite.setPosition(60, 30
+  )   
   
 
 
