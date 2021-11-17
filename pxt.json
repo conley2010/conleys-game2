@@ -1,6 +1,6 @@
 {
     "name": "BOBER V 2.4.12",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "",
     "dependencies": {
         "device": "*",
