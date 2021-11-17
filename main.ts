@@ -1057,4 +1057,4 @@ forever(function() {
 
 
 
-    music.setVolume(34)
+    music.setVolume(100)
