@@ -758,13 +758,13 @@ if (level == 1){
       tiles.setTilemap(tilemap`level4`)
   
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
-level=1
+
   }  
 if (level == 2) {
     tiles.setTilemap(tilemap`level3`)
 
     tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
-level=2
+
 } 
 
 
