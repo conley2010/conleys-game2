@@ -726,8 +726,10 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         true
     )
    
-level=0
 
+
+level=0
+let level2=false
 scene.onOverlapTile(SpriteKind.Player, img`
     . . . . . . . . . . . . . . d d
     . . . . . . . . . . . . . . d d
@@ -746,40 +748,38 @@ scene.onOverlapTile(SpriteKind.Player, img`
     . . . . . . . . . . . . . . d d
     . . . . . . . . . . . . . . d d
 `, function(sprite: Sprite, location: tiles.Location) {
-level += 1
-if (level == 3){
-    mySprite.setFlag(SpriteFlag.Ghost, true)
-mySprite.ay=0
 
-    controller.moveSprite(mySprite, 250, 250)
-}
+tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
 
-if (level == 1){
-      tiles.setTilemap(tilemap`level4`)
-  
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
 
-  }  
-if (level == 2) {
-    tiles.setTilemap(tilemap`level3`)
-
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
-
-} 
+    level += 1
+    pause(200)
+    if (level == 1) {
+        tiles.setTilemap(tilemap`level4`)
+        
+            mySprite.setPosition(0, 0)
+        }
+    
 
 
 
-        myMinimap = minimap.minimap(MinimapScale.Sixteenth, 1, 0)
-        mapSprite.setFlag(SpriteFlag.RelativeToCamera, true)
 
-        mapSprite.setImage(myMinimap.image)
 
-        mapSprite.setPosition(60, 10)
-    mapSprite.setFlag(SpriteFlag.Invisible, true)
+
+    if (level == 2) {
+        tiles.setTilemap(tilemap`level3`)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    level=2
+    }
+    if (level == 3) {
+        mySprite.startEffect(effects.confetti, 99999999999999999)
+        mySprite.say("I WIN!!!!!!!!!!!!", 9999999999999999999)
+    }
+   
 
 })
 sprites.onDestroyed(SpriteKind.Player, function(mysprite: Sprite) {
-    if (level == 1){
+    if (level = 1){
     let mySprite = sprites.create(img`
         . . . . . . f f f f . . . . . .
         . . . . f f f 2 2 f f f . . . .
@@ -802,7 +802,12 @@ sprites.onDestroyed(SpriteKind.Player, function(mysprite: Sprite) {
 
         tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 16))
 
-  
+  if (level = 3){
+    mySprite.setFlag(SpriteFlag.Ghost, true)
+mySprite.ay=0
+
+    controller.moveSprite(mySprite, 250, 250)
+}
 
     }
 })
@@ -1054,7 +1059,14 @@ forever(function() {
     
     })
 
-
-
-
     music.setVolume(100)
+
+
+
+
+
+
+
+
+
+
